@@ -20,6 +20,20 @@
     </style>
 </head>
 <body>
-    <iframe src="https://diplo-matchmaker.lovable.app/" allowfullscreen></iframe>
+    <iframe src="https://diplo-matchmaker.lovable.app/" allowfullscreen id="myIframe"></iframe>
+
+    <script>
+  // Wait for the iframe to fully load
+  document.getElementById('myIframe').onload = function() {
+    // Access the iframe's content
+    var iframeDocument = document.getElementById('myIframe').contentDocument || document.getElementById('myIframe').contentWindow.document;
+
+    // Find the element with the ID 'lovable-badge' and hide it
+    var element = iframeDocument.getElementById('lovable-badge');
+    if (element) {
+      element.style.display = 'none';
+    }
+  };
+</script>
 </body>
 </html>
